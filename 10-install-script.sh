@@ -19,10 +19,11 @@ then
     else
         echo "MySql installtion...Success"
     fi
-elif
+else
     echo "MySql already installed"
     dnf remove mysql
     if [ $? -eq 0 ]
     then
         echo "MySql uninstalled successfully"
+    fi
 fi
