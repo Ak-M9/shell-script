@@ -26,4 +26,3 @@ else
     then
         echo "MySql uninstalled successfully"
 fi
-
