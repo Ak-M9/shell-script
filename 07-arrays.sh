@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CARS = ("mercedes", "BMW", "porshe", "Lambhorgini")
+CARS=("mercedes", "BMW", "porshe", "Lambhorgini")
 
 echo "First car is ${CARS[0]}"
 echo "Second car is ${CARS[1]}"
