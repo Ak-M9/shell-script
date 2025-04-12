@@ -9,9 +9,9 @@ N="\e[0m"
 Validate(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 installation... $R Failure"
+        echo -e "$2 installation... $R Failure $N"
     else
-        echo -e "$2 installtion...$G Success"
+        echo -e "$2 installtion...$G Success $N"
     fi
 }
 if [ $USERID -ne 0 ]
@@ -28,7 +28,7 @@ then
     Validate $? mysql
     
 else
-    echo -e "$Y MySql already installed"
+    echo -e "$Y MySql already installed $N"
     dnf remove mysql -y
     if [ $? -eq 0 ]
     then
@@ -43,7 +43,7 @@ then
     dnf install git -y
     Validate $? git
 else
-    echo -e  "$Y git already installed"
+    echo -e  "$Y git already installed $N"
     dnf remove git -y
     if [ $? -eq 0 ]
     then
