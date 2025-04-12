@@ -1,13 +1,17 @@
 #!/bin/bash
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 Validate(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 installation...Failure"
+        echo -e "$2 installation... $R Failure"
     else
-        echo "$2 installtion...Success"
+        echo -e "$2 installtion...$G Success"
     fi
 }
 if [ $USERID -ne 0 ]
@@ -24,7 +28,7 @@ then
     Validate $? mysql
     
 else
-    echo "MySql already installed"
+    echo -e "$Y MySql already installed"
     dnf remove mysql -y
     if [ $? -eq 0 ]
     then
@@ -39,7 +43,7 @@ then
     dnf install git -y
     Validate $? git
 else
-    echo "git already installed"
+    echo -e  "$Y git already installed"
     dnf remove git -y
     if [ $? -eq 0 ]
     then
