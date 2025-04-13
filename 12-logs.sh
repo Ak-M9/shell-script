@@ -14,9 +14,9 @@ LOG_FILENAME="$LOGS_FOLDER/$LOG_File-$TIMESTAMP.log"
 Validate(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 installation... $R Failure $N" &>>$LOG_FILENAME
+        echo -e "$2 installation... $R Failure $N"
     else
-        echo -e "$2 installtion...$G Success $N" &>>$LOG_FILENAME
+        echo -e "$2 installtion...$G Success $N"
     fi
 }
 
@@ -36,11 +36,11 @@ then
     Validate $? mysql
     
 else
-    echo -e "$Y MySql already installed $N" &>>$LOG_FILENAME
+    echo -e "$Y MySql already installed $N"
     dnf remove mysql -y &>>$LOG_FILENAME
     if [ $? -eq 0 ]
     then
-        echo "MySql uninstalled successfully" &>>$LOG_FILENAME
+        echo "MySql uninstalled successfully"
     fi
 fi
 
@@ -51,10 +51,10 @@ then
     dnf install git -y &>>$LOG_FILENAME
     Validate $? git
 else
-    echo -e  "$Y git already installed $N" &>>$LOG_FILENAME
+    echo -e  "$Y git already installed $N"
     dnf remove git -y &>>$LOG_FILENAME
     if [ $? -eq 0 ]
     then
-        echo "git uninstalled successfully" &>>$LOG_FILENAME
+        echo "git uninstalled successfully"
     fi 
 fi
